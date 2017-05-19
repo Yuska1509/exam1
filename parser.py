@@ -17,4 +17,5 @@ for actor in actors:
         href = ahref.get('href')
     else:
         href = None
-    tablecreate.addActor(actor.name, actor.href, actor.film)
+    act = Actors(href, name, film)
+    tablecreate.addActor(act.name, act.href, act.film)
