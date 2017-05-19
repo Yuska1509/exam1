@@ -1,15 +1,13 @@
 import sqlite3
 
-
-class DB:
-    path = ''
+class db:
+    name = 'exam.db'
 
     _db_connection = None
     _db_cur = None
 
-    def __init__(self, path):
-        self.path = path
-        self._db_connection = sqlite3.connect(self.path)
+    def __init__(self):
+        self._db_connection = sqlite3.connect(self.name)
         self._db_cur = self._db_connection.cursor()
 
     def query(self, query):
