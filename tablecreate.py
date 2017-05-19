@@ -4,5 +4,5 @@ a = sqlite.db()
 #        " href TEXT NOT NULL, film TEXT NOT NULL);")
 
 def addActor(name, href, film):
-    a.query("INSERT INTO Actors(name, href, film) values (\'%s\', \'%s\', \'%s\';" %(name, href, film))
+    a.query("INSERT INTO Actors(name, href, film) values (\'%s\', \'%s\', \'%s\');" %(name, href, film))
     a.save()
