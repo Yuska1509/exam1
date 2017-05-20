@@ -14,7 +14,7 @@ for actor in actors:
     name = actor.text
     ahref = actor.find('a')
     if ahref != None:
-        href = ahref.get('href')
+        href = 'https://www.kinopoisk.ru' + ahref.get('href')
     else:
         href = None
     act = Actors(href, name, film)
