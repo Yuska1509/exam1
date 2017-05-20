@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from classes import Actors
-import tablecreate
+from SqlCreate import addActor
 
 url = "https://www.kinopoisk.ru/film/522/"
 html_doc = requests.get(url).text
@@ -18,4 +18,4 @@ for actor in actors:
     else:
         href = None
     act = Actors(href, name, film)
-    tablecreate.addActor(act.name, act.href, act.film)
+    addActor(act.name, act.href, act.film)
