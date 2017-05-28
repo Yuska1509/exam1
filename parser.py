@@ -1,21 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
-from classes import Actors
-from SqlCreate import addActor
+from classes import
+from SqlCreate import
 
-url = "https://www.kinopoisk.ru/film/522/"
+url = ""
 html_doc = requests.get(url).text
 soup = BeautifulSoup(html_doc, "html5lib")
-
-film = soup.find('h1', {'class': "moviename-big"}).text
-
-actors = soup.findAll('li', {'itemprop': "actors"})
-for actor in actors:
-    name = actor.text
-    ahref = actor.find('a')
-    if ahref != None:
-        href = 'https://www.kinopoisk.ru' + ahref.get('href')
-    else:
-        href = None
-    act = Actors(href, name, film)
-    addActor(act.name, act.href, act.film)

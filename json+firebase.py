@@ -1,10 +1,9 @@
 import requests
 import json
 from firebase import firebase
-from classes import Users
+from classes import
 
-#url = "https://api.vk.com/method/database.getSchools?city_id=1"
-url = "https://api.vk.com/method/groups.getMembers?group_id=33393308&fields=city,nickname"
+url = ""
 object = requests.get(url).text
 dic = json.loads(object)
 
@@ -17,26 +16,22 @@ if "response" in dic:
     if "users" in list1:
         listUsers = list1["users"]
         for user in listUsers:
-            if "first_name" in user:
-                fname = user["first_name"]
+            if "" in user:
+                 = user[""]
             else:
-                fname = ""
-            if "last_name" in user:
-                lname = user["last_name"]
+                 = ""
+            if "" in user:
+                 = user[""]
             else:
-                lname = ""
-            if "city" in user:
-                city = user["city"]
+                 = ""
+            if "" in user:
+                 = user[""]
             else:
-                city = ""
-            if "nickname" in user:
-                nick = user["nickname"]
-            else:
-                nick = ""
-            usersListOutout.append(Users(fname, lname, city, nick))
+                 = ""
+            usersListOutout.append((, , ))
 
-# for user in usersListOutout:
-#     print(user.__dict__)
-#     db.post("/users", user.__dict__)
+for user in usersListOutout:
+    print(user.__dict__)
+    db.post("/users", user.__dict__)
 
 print(db.get("/users", None))

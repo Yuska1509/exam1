@@ -1,12 +1,12 @@
-class Actors:
-    href = ""
-    name = ""
-    film = ""
+class :
+     = ""
+     = ""
+     = ""
 
-    def __init__(self, href, name, film):
-        self.href = href
-        self.name = name
-        self.film = film
+    def __init__(self, , , ):
+        self. =
+        self. =
+        self. =
 
 class Users:
     fname = ""
@@ -19,3 +19,10 @@ class Users:
         self.lname = lname
         self.city = city
         self.nick = nick
+
+
+
+# git remote add origin https://github.com/Yuska1509/exam1.git
+
+# git commit -am"//////"
+# git push -u origin master
